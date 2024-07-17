@@ -39,4 +39,4 @@ const HomeBannerOne = () => {
   );
 };
 
-export default HomeBannerOne;xport default HomeBannerOne
+export default HomeBannerOne;
