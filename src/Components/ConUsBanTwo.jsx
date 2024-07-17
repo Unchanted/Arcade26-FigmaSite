@@ -87,4 +87,4 @@ const ConUsBanTwo = () => {
     )
 }
 
-export default ConUsBanTwoxport default ConUsBanTwo
+export default ConUsBanTwo
