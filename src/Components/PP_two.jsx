@@ -11,17 +11,12 @@ const PP_one = () => {
     console.log(property);
     return (
         <div className='flex flex-col items-center justify-center'>
-            <div className='h-32 w-full bg-gray-600'/>
+            <div className='h-20 sm:h-32 w-full bg-gray-600'/>
             <div className="w-full flex flex-col  gap-10 bg-white p-8 ">
                 <div className="flex flex-col sm:flex-row justify-between font-medium">
                     <Link to="/search">
                         <FaArrowLeftLong size={30} />
                     </Link>
-
-                    <div className="flex flex-row justify-center items-center">
-                        <MdOutlineIosShare />
-                        <p>Share</p>
-                    </div>
 
                 </div>
                 <div className="flex flex-row justify-between gap-10 md:gap-5 sm:gap-2 items-center">
@@ -91,12 +86,25 @@ const PP_one = () => {
                         </div>
                     </div>
                 </div>
-                <div className="flex flex-row gap-2">
-                    <img className='w-1/4' src={property.imgurl} alt="" />
-                    <img className='w-1/4' src={property.imgurl} alt="" />
-                    <img className='w-1/4' src={property.imgurl} alt="" />
-                    <img className='w-1/4' src={property.imgurl} alt="" />
+                <ul
+          role="list"
+          className="grid grid-cols-1 gap-x-6 gap-y-8 lg:grid-cols-3 xl:gap-x-8"
+        >
+
+                {property.imgurls.map((img, index) => (
+                    <li
+                    key={index}
+                    className="overflow-hidden rounded-xl border border-gray-200"
+                  >
+                    <div className="flex flex-col gap-4">
+                  <div
+                    className="flex items-center justify-center h-64 bg-cover bg-center"
+                    style={{ backgroundImage: `url(${img})` }}
+                  ></div>
                 </div>
+                </li>
+                ))}
+                </ul>
             </div>
 
         </div>
